@@ -22,8 +22,7 @@ export default function App() {
   }, [])
 
   return (
-    <div className="relative min-h-screen bg-ink">
-      <div className="grain" aria-hidden />
+    <div className="relative min-h-screen bg-canvas">
       <Nav />
       <main id="icerik">
         <Hero />

@@ -1,40 +1,55 @@
 import { DemoButton } from './DemoButton'
 import { DeviceStage } from './DeviceStage'
 
+const proof = ['Admin ve personel rolleri', 'TR / EN', 'Telefona kurulabilir']
+
 export function Hero() {
   return (
-    <section id="ust" className="relative overflow-x-hidden px-5 pb-8 pt-14 md:px-8 md:pt-20">
+    <section id="ust" className="relative overflow-x-clip px-5 pt-16 pb-6 md:px-8 md:pt-24">
       <div className="ambient" aria-hidden />
-      <div className="relative mx-auto max-w-6xl text-center">
-        <p
-          className="font-display text-[11px] tracking-[0.32em] text-gold md:text-xs"
-          data-reveal
-        >
-          DAHA FAZLA SATIŞ, DAHA FAZLA BAŞARI
+
+      <div className="relative mx-auto max-w-3xl text-center">
+        <p className="label text-brass" data-reveal>
+          Daha fazla satış, daha fazla başarı
         </p>
-        <div className="mx-auto mt-3 mb-8 h-px w-28 bg-linear-to-r from-transparent via-gold to-transparent" />
+
         <h1
-          className="font-display text-[1.7rem] leading-[1.15] font-semibold tracking-[0.06em] text-cream sm:text-4xl md:text-5xl lg:text-[3.4rem]"
+          className="mt-6 font-display text-[2.6rem] leading-[1.04] tracking-[-0.02em] text-ink sm:text-6xl md:text-[4.5rem]"
           data-reveal
         >
-          PROJE PAZARLAMA
-          <br />
-          YÖNETİM SİSTEMİ
+          Proje pazarlamasının tamamı,{' '}
+          <em className="italic text-brass">tek panelde</em>.
         </h1>
+
         <p
-          className="mx-auto mt-5 max-w-xl text-base text-muted md:text-lg"
+          className="mx-auto mt-7 max-w-xl text-[1.0625rem] leading-relaxed text-muted md:text-lg"
           data-reveal
         >
-          Tüm süreçler tek platformda, kontrol hep sizde.
+          Satış, acente, komisyon, sözleşme ve tapu süreçleri aynı yerde ilerler. Tüm
+          süreçler tek platformda, kontrol hep sizde.
         </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3" data-reveal>
+
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-3" data-reveal>
           <DemoButton />
-          <a href="#ozellikler" className="ghost-btn">
+          <a href="#ozellikler" className="btn btn-secondary">
             Özellikleri gör
           </a>
         </div>
-        <DeviceStage />
+
+        <ul
+          className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2"
+          data-reveal
+        >
+          {proof.map((item) => (
+            <li key={item} className="flex items-center gap-2 text-[13px] text-muted">
+              <span className="h-1 w-1 rounded-full bg-brass-mid" aria-hidden />
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
+
+      <DeviceStage />
     </section>
   )
 }

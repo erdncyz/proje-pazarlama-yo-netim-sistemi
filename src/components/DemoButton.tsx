@@ -5,19 +5,19 @@ import { DEMO_URL } from '../config'
 type DemoButtonProps = {
   className?: string
   children?: string
-  ghost?: boolean
+  variant?: 'primary' | 'secondary' | 'brass'
   external?: boolean
   onClick?: () => void
 }
 
 export function DemoButton({
   className = '',
-  children = 'Demoyu Aç',
-  ghost = false,
+  children = 'Demoyu aç',
+  variant = 'primary',
   external = false,
   onClick,
 }: DemoButtonProps) {
-  const classes = `${ghost ? 'ghost-btn' : 'gold-btn'} ${className}`
+  const classes = `btn btn-${variant} ${className}`
 
   if (external) {
     return (

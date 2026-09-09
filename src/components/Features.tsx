@@ -47,7 +47,11 @@ const features: Feature[] = [
     Icon: TrendUp,
   },
   { title: 'Yetkilendirme', body: 'Admin ve personel rolleri, onaylı kayıt.', Icon: ShieldCheck },
-  { title: 'Müşteri kayıt', body: 'Acenteli ve acentesiz müşteri takibi.', Icon: IdentificationCard },
+  {
+    title: 'Müşteri kayıt',
+    body: 'Acenteli ve acentesiz müşteri takibi.',
+    Icon: IdentificationCard,
+  },
   { title: 'Acente aramaları', body: 'Yetkili, telefon ve not ile arama günlüğü.', Icon: PhoneCall },
   { title: 'Ziyaretler', body: 'Bireysel veya ekip acente ziyaret kayıtları.', Icon: CalendarCheck },
   { title: 'CRM / talep formu', body: 'Aday müşteriyle ilişki ve konut talep formu.', Icon: Handshake },
@@ -69,20 +73,23 @@ export function Features() {
     <section id="ozellikler" className="px-5 py-16 md:px-8 md:py-24">
       <div className="mx-auto max-w-6xl">
         <header className="max-w-2xl" data-reveal>
-          <p className="font-display text-[11px] tracking-[0.3em] text-gold">ÖZELLİKLER</p>
-          <h2 className="mt-3 font-display text-3xl tracking-wide text-cream md:text-4xl">
+          <p className="label text-brass">Özellikler</p>
+          <h2 className="mt-4 font-display text-3xl leading-[1.1] tracking-[-0.015em] text-ink md:text-[2.75rem]">
             Saha, satış ve finans aynı dilde.
           </h2>
           <p className="mt-4 text-muted">
-            Görseldeki tüm süreçler gerçek üründe var — yetkiden tapuya, acenteden prime.
+            Yetkilendirmeden tapu teslimine, acente aramasından prim dağıtımına kadar tüm
+            süreçler üründe hazır.
           </p>
         </header>
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((feature) => (
             <article key={feature.title} className="feature-card" data-reveal>
-              <feature.Icon size={24} weight="light" className="text-gold" />
-              <h3 className="mt-4 font-display text-lg text-cream">{feature.title}</h3>
+              <feature.Icon size={22} weight="light" className="text-brass" />
+              <h3 className="mt-4 font-display text-xl leading-tight tracking-[-0.01em] text-ink">
+                {feature.title}
+              </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{feature.body}</p>
             </article>
           ))}
