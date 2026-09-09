@@ -7,7 +7,6 @@ import { Logo } from './Logo'
 const links = [
   { href: '#ozellikler', label: 'Özellikler' },
   { href: '#panel-360', label: '360°' },
-  { href: '#demo', label: 'Demo' },
 ]
 
 export function Nav() {

@@ -23,15 +23,13 @@ type Feature = {
   title: string
   body: string
   Icon: Icon
-  wide?: boolean
 }
 
-const featured: Feature[] = [
+const features: Feature[] = [
   {
     title: 'Firma 360°',
     body: 'Satış, komisyon, prim ve raporlar tek ekranda. Tüm bilgiye tek bakışta ulaşın.',
     Icon: Compass,
-    wide: true,
   },
   {
     title: 'Satıştan tapuya rapor',
@@ -48,9 +46,6 @@ const featured: Feature[] = [
     body: 'Ciro, kapora, yan tutarlar, fatura ve prim dağıtımı net hesaplanır.',
     Icon: TrendUp,
   },
-]
-
-const rest: Feature[] = [
   { title: 'Yetkilendirme', body: 'Admin ve personel rolleri, onaylı kayıt.', Icon: ShieldCheck },
   { title: 'Müşteri kayıt', body: 'Acenteli ve acentesiz müşteri takibi.', Icon: IdentificationCard },
   { title: 'Acente aramaları', body: 'Yetkili, telefon ve not ile arama günlüğü.', Icon: PhoneCall },
@@ -83,32 +78,12 @@ export function Features() {
           </p>
         </header>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-4">
-          {featured.map((feature) => (
-            <article
-              key={feature.title}
-              data-reveal
-              className={`glass group rounded-2xl p-6 transition-[box-shadow,border-color] duration-200 hover:border-gold/45 hover:shadow-[0_0_0_1px_rgba(201,163,106,0.28),0_24px_50px_rgba(0,0,0,0.35)] ${
-                feature.wide ? 'md:col-span-2' : ''
-              }`}
-            >
-              <feature.Icon size={28} weight="light" className="text-gold" />
-              <h3 className="mt-4 font-display text-xl text-cream">{feature.title}</h3>
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {features.map((feature) => (
+            <article key={feature.title} className="feature-card" data-reveal>
+              <feature.Icon size={24} weight="light" className="text-gold" />
+              <h3 className="mt-4 font-display text-lg text-cream">{feature.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{feature.body}</p>
-            </article>
-          ))}
-        </div>
-
-        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {rest.map((feature) => (
-            <article
-              key={feature.title}
-              data-reveal
-              className="rounded-xl border border-line bg-ink-2/80 p-4 transition-colors duration-200 hover:border-gold/40"
-            >
-              <feature.Icon size={20} weight="light" className="text-gold" />
-              <h3 className="mt-3 text-sm font-medium text-cream">{feature.title}</h3>
-              <p className="mt-1 text-xs leading-relaxed text-muted">{feature.body}</p>
             </article>
           ))}
         </div>
